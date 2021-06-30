@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-pcap.iml" filepath="$PROJECT_DIR$/.idea/modules/android-pcap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-pcap.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-pcap.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FakeApDetector.iml" filepath="$PROJECT_DIR$/.idea/modules/FakeApDetector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FakeApDetector.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FakeApDetector.app.iml" />
     </modules>
   </component>
 </project>
