@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.kismetwireless.android.pcapcapture"
+    android:versionCode="1"
+    android:versionName="2012.12.1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="30" />
+
+    <!-- <uses-sdk -->
+    <!-- android:minSdkVersion="13" -->
+    <!-- android:targetSdkVersion="15" /> -->
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="net.kismetwireless.android.pcapcapture.MainActivity"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+        <activity
+            android:name="net.kismetwireless.android.pcapcapture.ChannelPrefs"
+            android:label="@string/pref_channel"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="net.kismetwireless.android.pcapcapture.FilemanagerActivity"
+            android:label="@string/title_activity_filemanager"
+            android:theme="@style/AppTheme" />
+
+        <service
+            android:name="net.kismetwireless.android.pcapcapture.PcapService"
+            android:description="@string/pcap_service_desc" />
+    </application>
+
+</manifest>
