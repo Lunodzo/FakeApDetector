@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "/root/StudioProjects/android-pcap/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "/root/StudioProjects/FakeApDetector/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-2/files-2.1/9902be9b1aac21e364b85501bd7541d0/core-1.0.0/res/values-v16/values-v16.xml",
+                    "source": "/root/.gradle/caches/transforms-2/files-2.1/77c7b97873973e149b09819f46c0a153/appcompat-1.3.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/root/.gradle/caches/transforms-2/files-2.1/cc5e9dcdc56dc39042f72c501235e83f/core-1.5.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

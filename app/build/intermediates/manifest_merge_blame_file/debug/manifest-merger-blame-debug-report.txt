@@ -5,101 +5,111 @@
 5    android:versionName="2012.12.1" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="14"
-8-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml
+8        android:minSdkVersion="16"
+8-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml
-10
-11    <!-- <uses-sdk -->
-12    <!-- android:minSdkVersion="13" -->
-13    <!-- android:targetSdkVersion="15" /> -->
-14
-15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:10:5-81
-15-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:10:22-78
-16
-17    <supports-screens
-17-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:12:5-18:40
-18        android:anyDensity="true"
-18-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:13:9-34
-19        android:largeScreens="true"
-19-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:14:9-36
-20        android:normalScreens="true"
-20-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:15:9-37
-21        android:resizeable="true"
-21-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:16:9-34
-22        android:smallScreens="true"
-22-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:17:9-36
-23        android:xlargeScreens="true" />
-23-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:18:9-37
-24
-25    <application
-25-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:20:5-53:19
-26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/9902be9b1aac21e364b85501bd7541d0/core-1.0.0/AndroidManifest.xml:22:18-86
-27        android:debuggable="true"
-28        android:icon="@drawable/ic_launcher"
-28-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:21:9-45
-29        android:label="@string/app_name"
-29-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:22:9-41
-30        android:testOnly="true"
-31        android:theme="@style/AppTheme" >
-31-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:23:9-40
-32        <activity
-32-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:24:9-40:20
-33            android:name="net.kismetwireless.android.pcapcapture.MainActivity"
-33-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:25:13-41
-34            android:label="@string/title_activity_main"
-34-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:26:13-56
-35            android:launchMode="singleTask" >
-35-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:27:13-44
-36            <intent-filter>
-36-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:28:13-32:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:29:17-69
-37-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:29:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:31:17-77
-39-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:31:27-74
-40            </intent-filter>
-41            <intent-filter>
-41-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:33:13-35:29
-42                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-42-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:34:17-90
-42-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:34:25-87
-43            </intent-filter>
-44
-45            <meta-data
-45-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:37:13-39:57
-46                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-46-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:38:17-79
-47                android:resource="@xml/device_filter" />
-47-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:39:17-54
-48        </activity>
-49        <activity
-49-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:41:9-44:47
-50            android:name="net.kismetwireless.android.pcapcapture.ChannelPrefs"
-50-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:42:13-41
-51            android:label="@string/pref_channel"
-51-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:43:13-49
-52            android:theme="@style/AppTheme" />
-52-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:44:13-44
-53        <activity
-53-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:45:9-48:47
-54            android:name="net.kismetwireless.android.pcapcapture.FilemanagerActivity"
-54-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:46:13-48
-55            android:label="@string/title_activity_filemanager"
-55-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:47:13-63
-56            android:theme="@style/AppTheme" />
-56-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:48:13-44
-57
-58        <service
-58-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:50:9-52:63
-59            android:name="net.kismetwireless.android.pcapcapture.PcapService"
-59-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:51:13-40
-60            android:description="@string/pcap_service_desc" />
-60-->/root/StudioProjects/android-pcap/app/src/main/AndroidManifest.xml:52:13-60
-61    </application>
-62
-63</manifest>
+9-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml
+10    <!-- <uses-sdk -->
+11    <!-- android:minSdkVersion="13" -->
+12    <!-- android:targetSdkVersion="15" /> -->
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:9:5-81
+13-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:9:22-78
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:10:5-80
+14-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:10:22-78
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:11:5-78
+15-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:11:22-76
+16    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+16-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:12:5-75
+16-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:12:22-73
+17
+18    <supports-screens
+18-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:14:5-20:40
+19        android:anyDensity="true"
+19-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:15:9-34
+20        android:largeScreens="true"
+20-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:16:9-36
+21        android:normalScreens="true"
+21-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:17:9-37
+22        android:resizeable="true"
+22-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:18:9-34
+23        android:smallScreens="true"
+23-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:19:9-36
+24        android:xlargeScreens="true" />
+24-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:20:9-37
+25
+26    <application
+26-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:22:5-56:19
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.5.0] /root/.gradle/caches/transforms-2/files-2.1/cc5e9dcdc56dc39042f72c501235e83f/core-1.5.0/AndroidManifest.xml:24:18-86
+28        android:debuggable="true"
+29        android:icon="@drawable/ic_launcher"
+29-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:23:9-45
+30        android:label="@string/app_name"
+30-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:24:9-41
+31        android:testOnly="true"
+32        android:theme="@style/AppTheme" >
+32-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:25:9-40
+33        <activity android:name="net.kismetwireless.android.pcapcapture.WiFiScan" />
+33-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:26:9-55
+33-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:26:19-43
+34        <activity
+34-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:27:9-43:20
+35            android:name="net.kismetwireless.android.pcapcapture.MainActivity"
+35-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:28:13-41
+36            android:label="@string/title_activity_main"
+36-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:29:13-56
+37            android:launchMode="singleTask" >
+37-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:30:13-44
+38            <intent-filter>
+38-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:31:13-35:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:32:17-69
+39-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:32:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:34:17-77
+41-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:34:27-74
+42            </intent-filter>
+43            <intent-filter>
+43-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:36:13-38:29
+44                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+44-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:37:17-90
+44-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:37:25-87
+45            </intent-filter>
+46
+47            <meta-data
+47-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:40:13-42:57
+48                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+48-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:41:17-79
+49                android:resource="@xml/device_filter" />
+49-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:42:17-54
+50        </activity>
+51        <activity
+51-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:44:9-47:47
+52            android:name="net.kismetwireless.android.pcapcapture.ChannelPrefs"
+52-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:45:13-41
+53            android:label="@string/pref_channel"
+53-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:46:13-49
+54            android:theme="@style/AppTheme" />
+54-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:47:13-44
+55        <activity
+55-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:48:9-51:47
+56            android:name="net.kismetwireless.android.pcapcapture.FilemanagerActivity"
+56-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:49:13-48
+57            android:label="@string/title_activity_filemanager"
+57-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:50:13-63
+58            android:theme="@style/AppTheme" />
+58-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:51:13-44
+59
+60        <service
+60-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:53:9-55:63
+61            android:name="net.kismetwireless.android.pcapcapture.PcapService"
+61-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:54:13-40
+62            android:description="@string/pcap_service_desc" />
+62-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:55:13-60
+63    </application>
+64
+65</manifest>

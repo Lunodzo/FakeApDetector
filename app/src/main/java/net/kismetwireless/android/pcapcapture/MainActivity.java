@@ -221,7 +221,7 @@ public class MainActivity extends Activity {
 
 		if (!mPreferences.contains(PREF_LOGDIR)) {
 			SharedPreferences.Editor e = mPreferences.edit();
-			e.putString(PREF_LOGDIR, "/mnt/sdcard/pcap");
+			e.putString(PREF_LOGDIR, "/storage/sdcard0/pcap");
 			e.commit();
 		}
 

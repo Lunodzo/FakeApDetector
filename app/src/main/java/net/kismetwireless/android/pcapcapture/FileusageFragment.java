@@ -6,7 +6,7 @@ package net.kismetwireless.android.pcapcapture;
  * RegisterFileType; FileTyper creates icons and descriptive text of file
  * contents.
  * 
- * Optional favorite support ties into sharedpreferences to store favorited
+ * Optional favorite support ties into shared preferences to store favorited
  * file status
  * 
  * Built-in support for sharing and deleting files from the list

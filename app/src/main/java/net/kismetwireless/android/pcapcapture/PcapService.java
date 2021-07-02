@@ -83,7 +83,7 @@ public class PcapService extends Service {
 		}
 	};
 	
-	private Runnable chanChangeTask = new Runnable() {
+	private final Runnable chanChangeTask = new Runnable() {
 		public void run() {
 			if (mShutdown) return;
 			

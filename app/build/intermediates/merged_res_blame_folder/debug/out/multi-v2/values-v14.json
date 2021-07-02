@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/root/StudioProjects/android-pcap/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
+            "outputFile": "/root/StudioProjects/FakeApDetector/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
             "map": [
                 {
-                    "source": "/root/StudioProjects/android-pcap/app/src/main/res/values-v14/styles.xml",
+                    "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/values-v14/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

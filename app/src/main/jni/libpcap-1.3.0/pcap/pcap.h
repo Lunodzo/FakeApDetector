@@ -347,7 +347,7 @@ static pcap_t *pcap_fopen_offline(FILE *, char *);
 pcap_t	*pcap_fopen_offline(FILE *, char *);
 #endif /*WIN32*/
 
-void	pcap_close(pcap_t *);
+void pcap_close(pcap_t *);
 int	pcap_loop(pcap_t *, int, pcap_handler, u_char *);
 int	pcap_dispatch(pcap_t *, int, pcap_handler, u_char *);
 const u_char*
