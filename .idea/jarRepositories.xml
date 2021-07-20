@@ -21,5 +21,10 @@
       <option name="name" value="Google" />
       <option name="url" value="https://dl.google.com/dl/android/maven2/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="85aa2381-624c-40f4-914e-112ba1bfc049" />
+      <option name="name" value="85aa2381-624c-40f4-914e-112ba1bfc049" />
+      <option name="url" value="https://mvnrepository.com/artifact/io.pkts/pkts-core" />
+    </remote-repository>
   </component>
 </project>

@@ -204,6 +204,10 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/action_settings.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/layout_activity_fake_apscanner.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/activity_fake_apscanner.xml"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_action_chanhop.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_action_chanhop.png"
     },

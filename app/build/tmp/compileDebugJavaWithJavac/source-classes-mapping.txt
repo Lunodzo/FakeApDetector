@@ -29,6 +29,8 @@ net/kismetwireless/android/pcapcapture/MainActivity.java
  net.kismetwireless.android.pcapcapture.MainActivity$1
  net.kismetwireless.android.pcapcapture.MainActivity$10
  net.kismetwireless.android.pcapcapture.MainActivity$11
+ net.kismetwireless.android.pcapcapture.MainActivity$12
+ net.kismetwireless.android.pcapcapture.MainActivity$13
  net.kismetwireless.android.pcapcapture.MainActivity$2
  net.kismetwireless.android.pcapcapture.MainActivity$3
  net.kismetwireless.android.pcapcapture.MainActivity$4
@@ -41,10 +43,11 @@ net/kismetwireless/android/pcapcapture/MainActivity.java
  net.kismetwireless.android.pcapcapture.MainActivity$deferredUsbIntent
 net/kismetwireless/android/pcapcapture/WiFiScan.java
  net.kismetwireless.android.pcapcapture.WiFiScan
- net.kismetwireless.android.pcapcapture.WiFiScan$1
 net/kismetwireless/android/pcapcapture/FileusageFragment.java
  net.kismetwireless.android.pcapcapture.FileusageFragment
  net.kismetwireless.android.pcapcapture.FileusageFragment$1
+net/kismetwireless/android/pcapcapture/FakeAPScanner.java
+ net.kismetwireless.android.pcapcapture.FakeAPScanner
 net/kismetwireless/android/pcapcapture/PcapLogger.java
  net.kismetwireless.android.pcapcapture.PcapLogger
 net/kismetwireless/android/pcapcapture/DialogListener.java

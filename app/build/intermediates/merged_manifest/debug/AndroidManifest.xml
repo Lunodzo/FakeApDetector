@@ -14,6 +14,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
 
     <supports-screens
         android:anyDensity="true"
@@ -30,7 +36,13 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="net.kismetwireless.android.pcapcapture.WiFiScan" />
+        <activity
+            android:name="net.kismetwireless.android.pcapcapture.FakeAPScanner"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="net.kismetwireless.android.pcapcapture.WiFiScan"
+            android:parentActivityName="net.kismetwireless.android.pcapcapture.MainActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="net.kismetwireless.android.pcapcapture.MainActivity"
             android:label="@string/title_activity_main"
@@ -56,6 +68,16 @@
             android:name="net.kismetwireless.android.pcapcapture.FilemanagerActivity"
             android:label="@string/title_activity_filemanager"
             android:theme="@style/AppTheme" />
+
+        <receiver android:name="net.kismetwireless.android.pcapcapture.WiFiScan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
 
         <service
             android:name="net.kismetwireless.android.pcapcapture.PcapService"

@@ -1,9 +1,5 @@
 package net.kismetwireless.android.pcapcapture;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Date;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
@@ -30,13 +26,20 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class MainActivity extends Activity { 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Date;
+
+public class MainActivity extends Activity{
+
 	String LOGTAG = "PcapCapture";
 
 	PendingIntent mPermissionIntent;
@@ -47,6 +50,7 @@ public class MainActivity extends Activity {
 
 	Messenger mService = null;
 	boolean mIsBound = false;
+
 
 	public class deferredUsbIntent {
 		UsbDevice device;
@@ -213,6 +217,7 @@ public class MainActivity extends Activity {
 			Log.d(LOGTAG, "Failed to send die message: " + e);
 		}
 	}
+
 
 	private void doUpdatePrefs() {
 		mChannelHop = mPreferences.getBoolean(PREF_CHANNELHOP, true);
@@ -417,6 +422,12 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+//		Button buttonScan = (Button)findViewById(R.id.btn_scan);
+//		buttonScan.setOnClickListener(v -> {
+//			Toast toast = Toast.makeText(getApplicationContext(), "Button Clicked", Toast.LENGTH_SHORT);
+//			toast.show();
+//		});
+
 		// Don't launch a second copy from the USB intent
 		if (!isTaskRoot()) {
 			final Intent intent = getIntent();
@@ -428,11 +439,13 @@ public class MainActivity extends Activity {
 			}
 		}
 
+
 		mContext = this;
 
 		mPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
 
 		setContentView(R.layout.activity_main);
+
 
 		mTextDashUsb = (TextView) findViewById(R.id.textDashUsbDevice);
 		mTextDashUsbSmall = (TextView) findViewById(R.id.textDashUsbSmall);
@@ -453,6 +466,26 @@ public class MainActivity extends Activity {
 		mImageControl = (ImageView) findViewById(R.id.imageDashLogControl);
 		mImageShare = (ImageView) findViewById(R.id.imageShare);
 		mImageHardware = (ImageView) findViewById(R.id.imageViewHardware);
+
+		Button btnScan = (Button) findViewById(R.id.btn_scan);
+		btnScan.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), FakeAPScanner.class));
+//				Toast toast = Toast.makeText(getApplicationContext(), "Launch new page for Scanning", Toast.LENGTH_SHORT);
+//				toast.show();
+			}
+		});
+
+		//Open the AP Scanning page
+		Button btnScanAP = findViewById(R.id.btn_scan_ap);
+		btnScanAP.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), WiFiScan.class));
+			}
+		});
 		
         if (Build.MANUFACTURER.equals("motorola")) {
         	mTextDashHardware.setText("Motorola hardware has limitations on USB (special power " +
@@ -460,7 +493,7 @@ public class MainActivity extends Activity {
         	mImageHardware.setImageResource(R.drawable.alert_warning);
         	mRowHardware.setVisibility(View.VISIBLE);
         }
-
+//TODO check the PcapService class
 		Intent svc = new Intent(this, PcapService.class);
 		startService(svc);
 		doBindService();
@@ -491,7 +524,7 @@ public class MainActivity extends Activity {
 		 */
 		// getFragmentManager().beginTransaction().add(R.id.fragment_filelist, list).commit();
 
-		mRowLogControl.setOnClickListener(new View.OnClickListener() {
+		mRowLogControl.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (mLocalLogging) {
@@ -513,7 +546,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		mRowManage.setOnClickListener(new View.OnClickListener() {
+		mRowManage.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(mContext, FilemanagerActivity.class);
@@ -521,14 +554,14 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		mRowLogShare.setOnClickListener(new View.OnClickListener() {
+		mRowLogShare.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				doShareCurrent();
 			}
 		});
 		
-		mRowHop.setOnClickListener(new View.OnClickListener() {
+		mRowHop.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				startActivityForResult(new Intent(MainActivity.this, ChannelPrefs.class), PREFS_REQ);

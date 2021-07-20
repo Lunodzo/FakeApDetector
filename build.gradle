@@ -4,6 +4,12 @@ buildscript {
         mavenCentral()
         //jcenter()
         google()
+        maven {
+            url "https://maven.springframework.org/release"
+        }
+        maven {
+            url "https://mvnrepository.com/artifact/io.pkts/pkts-core"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.2'
@@ -13,5 +19,6 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
     }
 }
