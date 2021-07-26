@@ -4,7 +4,7 @@
             "outputFile": "/root/StudioProjects/FakeApDetector/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/root/.gradle/caches/transforms-2/files-2.1/77c7b97873973e149b09819f46c0a153/appcompat-1.3.0/res/values-port/values-port.xml",
+                    "source": "/root/.gradle/caches/transforms-3/7d5df6fa97a87c8b992117dcca872bcb/transformed/appcompat-1.3.0/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

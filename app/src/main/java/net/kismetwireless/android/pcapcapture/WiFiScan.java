@@ -1,5 +1,7 @@
 package net.kismetwireless.android.pcapcapture;
 
+import static android.os.SystemClock.sleep;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("ALL")
@@ -25,7 +28,7 @@ public class WiFiScan extends AppCompatActivity {
    TextView scanText;
    ListView wifiList;
    List<ScanResult> results;
-   Button scanButton;
+   Button scanButton, scanEvilButton;
    ArrayList<String> arrayList = new ArrayList<>();
    ArrayAdapter arrayAdapter;
 
@@ -34,10 +37,21 @@ public class WiFiScan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wi_fi_scan);
         scanButton = findViewById(R.id.btn_List);
+        scanEvilButton = findViewById(R.id.btn_scan_evil);
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
+                //arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
+                //wifiList.setAdapter(arrayAdapter);
+                scanWiFi();
+            }
+        });
 
+        scanEvilButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scanEvilWiFi();
             }
         });
 
@@ -54,6 +68,75 @@ public class WiFiScan extends AppCompatActivity {
         scanWiFi();
     }
 
+    private void scanEvilWiFi() {
+        arrayList.clear();
+        registerReceiver(wifiEvilReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+
+
+        int scanLoop = 2;
+        List<ScanResult> firstSSID;
+        List<ScanResult> secondSSID;
+        List<ScanResult> thirdSSID;
+
+        List<ScanResult> firstBSSID;
+        List<ScanResult> secondBSSID;
+        List<ScanResult> thirdBSSID;
+
+        List<ScanResult> firstSignal;
+        List<ScanResult> secondSignal;
+        List<ScanResult> thirdSignal;
+
+        List<ScanResult> firstCapabilities;
+        List<ScanResult> secondCapabilities;
+        List<ScanResult> thirdCapabilities;
+
+//        String [] bssid = new String[10];
+//        int [] signal = new int[10];
+//        String [] capabilities = new String[10];
+        Toast.makeText(this, "Scanning three times to collect enough results..", Toast.LENGTH_SHORT).show();
+
+        //Control number of scans
+        for (int i = 0; i <= scanLoop; i++){
+            //Loop through all results and try to store each in a separate variable
+            //Remember: You may have more that one SSID and everything else
+            //TODO create a list of SSID, BSSID, signal strength and capabilities in this loop
+            for(ScanResult scanResult: results) {
+                wifiManager.startScan();
+
+                if(i == 0){
+                    Toast.makeText(this, "First scan", Toast.LENGTH_SHORT).show();
+                    //firstSSID = Collections.singletonList(arrayList.add(scanResult.SSID));
+                    firstSSID = arrayList.add(scanResult.SSID);
+                    //String firstSSID = ssid[i];
+                    String firstBSSID = bssid[i];
+                    int firstSignal = signal[i];
+                    String firstCapabilities = capabilities[i];
+
+                    Toast.makeText(this, "Matokeo ni "+firstSSID+" "+firstBSSID+" "
+                            +firstSignal+" "+firstCapabilities, Toast.LENGTH_SHORT).show();
+                }else if(i == 1){
+                    Toast.makeText(this, "Second scan", Toast.LENGTH_SHORT).show();
+                    String secondSSID = ssid[i];
+                    String secondBSSID = bssid[i];
+                    int secondSignal = signal[i];
+                    String secondCapabilities = capabilities[i];
+                }else if (i == 2){
+                    Toast.makeText(this, "Third scan", Toast.LENGTH_SHORT).show();
+                    String thirdSSID = ssid[i];
+                    String thirdBSSID = bssid[i];
+                    int thirdSignal = signal[i];
+                    String thirdCapabilities = capabilities[i];
+                }else{
+                    Toast.makeText(this, "Out of boundary", Toast.LENGTH_SHORT).show();
+                }
+
+                //Toast.makeText(this, "Matokeo ni "+ssid[scanLoop]+" "+firstBSSID+" "
+                    //+firstSignal+" "+firstCapabilities, Toast.LENGTH_SHORT).show();
+            }
+            sleep(3000);
+        }
+    }
+
     private  void scanWiFi(){
         arrayList.clear();
         registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
@@ -68,9 +151,17 @@ public class WiFiScan extends AppCompatActivity {
             unregisterReceiver(this);
 
             for (ScanResult scanResult: results){
-                arrayList.add(scanResult.SSID +" - "+ scanResult.capabilities + " - "+ scanResult.BSSID);
+                arrayList.add(scanResult.SSID +" * "+ scanResult.capabilities + " * "+ scanResult.BSSID+ " * "
+                        + scanResult.level);
                 arrayAdapter.notifyDataSetChanged();
             }
+        }
+    };
+
+    BroadcastReceiver wifiEvilReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            results = wifiManager.getScanResults();
         }
     };
 }

@@ -1723,8 +1723,11 @@ drawable ic_action_usbsymbol
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher
+drawable ic_launcher_background
 drawable ic_menu_delete
 drawable ic_menu_rename
+drawable ic_menu_scan_background
+drawable ic_menu_scan_foreground
 drawable ic_menu_share
 drawable ic_menu_star
 drawable ic_mtrl_checked_circle
@@ -1869,6 +1872,7 @@ id bounce
 id btn_List
 id btn_scan
 id btn_scan_ap
+id btn_scan_evil
 id buttonDelete
 id buttonPanel
 id cache_measures
@@ -2441,6 +2445,8 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu activity_main
 menu popup_size
+mipmap ic_menu_scan
+mipmap ic_menu_scan_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2553,6 +2559,7 @@ string path_password_strike_through
 string pcap_service_desc
 string popup_delete
 string popup_rename
+string popup_scan
 string popup_share
 string popup_size_100
 string popup_size_1g

@@ -33,35 +33,38 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Objects;
 import java.util.TreeMap;
 
+import io.pkts.PacketHandler;
+import io.pkts.Pcap;
+import io.pkts.packet.Packet;
+import io.pkts.protocol.Protocol;
+
 public class FilelistFragment extends ListFragment {
-	private static String LOGTAG = "filelist-fragment";
+	private static final String LOGTAG = "filelist-fragment";
     public Object registerFiletype;
     private File mDirectory;
 	private int mTimeout;
 	private ArrayList<FileEntry> mFileList;
-	private TreeMap<String, FileTyper> mFileTypeMap = new TreeMap<String, FileTyper>(String.CASE_INSENSITIVE_ORDER);
-	private Handler mTimeHandler = new Handler();
+	private final TreeMap<String, FileTyper> mFileTypeMap = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+	private final Handler mTimeHandler = new Handler();
 	private FileArrayAdapter mFileAdapter;
 	private boolean mFavorites = false;
 	private SharedPreferences mPreferences;
 	
 	public static final int RENAME_DIALOG_ID = 1001;
 	
-	private NameListener mNameListener = new NameListener();
+	private final NameListener mNameListener = new NameListener();
 
-	private Runnable updateTask = new Runnable() {
-		@Override
-		public void run() {
-			Populate();
-		}
-	};
+	private final Runnable updateTask = this::Populate;
 
 	public boolean registerFiletype(String ext, FileTyper ft) {
 		if (mFileTypeMap.containsKey(ext))
@@ -73,8 +76,7 @@ public class FilelistFragment extends ListFragment {
 	}
 
 	public void unregisterFiletype(String ext) {
-		if (mFileTypeMap.containsKey(ext)) 
-			mFileTypeMap.remove(ext);
+		mFileTypeMap.remove(ext);
 	}
 	
 	public void setFavorites(boolean fav) {
@@ -104,9 +106,9 @@ public class FilelistFragment extends ListFragment {
 	public void Populate() {
 		mTimeHandler.removeCallbacks(updateTask);
 		
-		ArrayList<FileEntry> al = new ArrayList<FileEntry>();
+		ArrayList<FileEntry> al = new ArrayList<>();
 
-		for (String fn : mDirectory.list()) {
+		for (String fn : Objects.requireNonNull(mDirectory.list())) {
 			int pos = fn.lastIndexOf('.');
 			String ext = fn.substring(pos+1);
 
@@ -310,24 +312,21 @@ public class FilelistFragment extends ListFragment {
 					fav.setImageResource(R.drawable.rating_not_important);
 				}
 				
-				fav.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						boolean newpref = false;
-						
-						if (mPreferences.getBoolean(favkey, false)) {
-							newpref = false;
-							fav.setImageResource(R.drawable.rating_not_important);
-						} else {
-							newpref = true;
-							fav.setImageResource(R.drawable.rating_important);
-						}
-						
-						SharedPreferences.Editor e = mPreferences.edit();
-						e.putBoolean(favkey, newpref);
-						e.commit();
+				fav.setOnClickListener(v -> {
+					boolean newpref;
 
+					if (mPreferences.getBoolean(favkey, false)) {
+						newpref = false;
+						fav.setImageResource(R.drawable.rating_not_important);
+					} else {
+						newpref = true;
+						fav.setImageResource(R.drawable.rating_important);
 					}
+
+					SharedPreferences.Editor e = mPreferences.edit();
+					e.putBoolean(favkey, newpref);
+					e.apply();
+
 				});
 				
 			} else {
@@ -340,8 +339,51 @@ public class FilelistFragment extends ListFragment {
 					ImageView popup = (ImageView) v.findViewById(R.id.imageFileListPopup);
 					final ListPopupWindow popupWindow = new ListPopupWindow(mContext);
 					popupWindow.setModal(true);
+
 					
 					PopupMenuAdapter.PopupMenuItem popupItems[] = new PopupMenuAdapter.PopupMenuItem[] {
+
+							new PopupMenuAdapter.PopupMenuItem(R.drawable.ic_menu_scan_foreground, R.string.popup_scan,
+									v1 -> {
+										String fileName  = mitem.getFilename();
+
+										//String fileOriginal = mitem.getFile();
+										Toast.makeText(mContext,"Scanning "+mDirectory+" bro..", Toast.LENGTH_LONG).show();
+										try {
+											Pcap pcapFile = Pcap.openStream(mDirectory+"/"+fileName);
+											pcapFile.loop(new PacketHandler() {
+												@Override
+												public boolean nextPacket(Packet packet) throws IOException {
+													Protocol protocol = packet.getProtocol();
+													if (packet.hasProtocol(Protocol.UDP))
+														Toast.makeText(mContext, "UDP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.TCP))
+														Toast.makeText(mContext, "TCP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.ARP))
+														Toast.makeText(mContext, "ARP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.ICMP))
+														Toast.makeText(mContext, "ICMP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.IGMP))
+														Toast.makeText(mContext, "IGMP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.PCAP))
+														Toast.makeText(mContext, "PCAP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.RTCP))
+														Toast.makeText(mContext, "RTCP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.SIP))
+														Toast.makeText(mContext, "SIP "+protocol, Toast.LENGTH_SHORT).show();
+													else if (packet.hasProtocol(Protocol.ETHERNET_II))
+														Toast.makeText(mContext, "ETHERNET II "+protocol, Toast.LENGTH_SHORT).show();
+													else{
+														Toast.makeText(mContext, "Unidentified "+protocol, Toast.LENGTH_SHORT).show();
+													}
+													return true;
+												}
+											});
+										} catch (IOException e) {
+											Toast.makeText(mContext, "Failed to catch", Toast.LENGTH_SHORT).show();
+											e.printStackTrace();
+										}
+									}),
 							new PopupMenuAdapter.PopupMenuItem(R.drawable.ic_menu_share, R.string.popup_share, 
 								new View.OnClickListener() {
 								@Override
@@ -479,5 +521,37 @@ public class FilelistFragment extends ListFragment {
 		}
 		
 	}
+
+//	public static class Pcap{
+//		private final PcapGlobalHeader header;
+//		private final Buffer buffer;
+//		private final FramerManager framerManager;
+//
+//		private Filter filter;
+//		private final FilterFactory filterFactory = FilterFactory.getInstance();
+//
+//		public Pcap(PcapGlobalHeader header, final Buffer buffer) {
+//			assert header != null;
+//			assert buffer != null;
+//			this.header = header;
+//			this.buffer = buffer;
+//			this.framerManager = FramerManager.getInstance();
+//		}
+//
+//		public void setFilter(final String expression) throws FilterParseException {
+//			if (expression != null && !expression.isEmpty()) {
+//				this.filter = this.filterFactory.createFilter(expression);
+//			}
+//		}
+//
+//		public void loop(final PacketHandler callback) throws IOException, FramingException{
+//			final ByteOrder byteOrder = this.header.getByteOrder();
+//			final PcapFramer framer = new PcapFramer(this.header, this.framerManager);
+//			int count = 1;
+//
+//			Packet packet = null;
+//			boolean processNext = true;
+//		}
+//	}
 
 }

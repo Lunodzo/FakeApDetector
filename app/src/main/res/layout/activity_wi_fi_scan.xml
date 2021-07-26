@@ -13,12 +13,29 @@
         android:dividerHeight="2dp"
         android:drawSelectorOnTop="false"
         android:id="@+id/wifiList"/>
-    <Button
-        android:id="@+id/btn_List"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="Scan WiFi"
-        tools:ignore="HardcodedText"
-        android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/btn_List"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            android:text="Rescan"
+            tools:ignore="HardcodedText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/btn_scan_evil"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:layout_toRightOf="@+id/btn_List"
+            android:text="Scan Evil Twin"
+            android:layout_alignParentRight="true"
+            tools:ignore="HardcodedText"
+            android:layout_alignParentBottom="true"/>
+
+
 </RelativeLayout>
