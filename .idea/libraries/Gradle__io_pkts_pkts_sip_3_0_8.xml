@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.pkts:pkts-sip:3.0.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pkts/pkts-sip/3.0.8/69e26ee12e69355fe7537908525cb269ace00daa/pkts-sip-3.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pkts/pkts-sip/3.0.8/7b70b663e8befa0bf3f6176da7d0acc77c178efa/pkts-sip-3.0.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pkts/pkts-sip/3.0.8/8175b62f0242253fd2ac0e314c1516da4f6efca4/pkts-sip-3.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

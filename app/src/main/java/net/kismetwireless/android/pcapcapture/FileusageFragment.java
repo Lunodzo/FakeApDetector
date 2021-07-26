@@ -84,7 +84,7 @@ public class FileusageFragment extends Fragment {
 		if (mDirectory == null)
 			return;
 
-		mDirectorySize = FileUtils.countFileSizes(mDirectory, new String[] { "cap" }, 
+		mDirectorySize = FileUtils.countFileSizes(mDirectory, new String[] { "pcap" },
 				false, false, null);
 
 		updateSizeView();

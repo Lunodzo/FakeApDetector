@@ -1957,6 +1957,7 @@ id forever
 id fragment_container_view_tag
 id fragment_filelist
 id fragment_fileusage
+id fragment_pcaplist
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1982,6 +1983,9 @@ id imageDashLogControl
 id imageFileListIcon
 id imageFileListPopup
 id imageFileListRating
+id imagePcapListIcon
+id imagePcapListPopup
+id imagePcapListRating
 id imageShare
 id imageView1
 id imageView2
@@ -2090,6 +2094,7 @@ id parent_matrix
 id password_toggle
 id path
 id pathRelative
+id pcaplistRow
 id peekHeight
 id percent
 id pin
@@ -2210,12 +2215,15 @@ id textFileUse
 id textManage
 id textManageSmall
 id textPath
+id textPcapListName
+id textPcapListSmall
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
 id textView1
 id textView4
+id textWifiName
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2350,6 +2358,9 @@ layout dialog_rename
 layout fragment_filelist
 layout fragment_filelist_row
 layout fragment_fileusage
+layout fragment_pcaplist
+layout fragment_pcaplist_row
+layout list_wifi
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2532,6 +2543,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string no_data
 string no_usb_device
 string password_toggle_content_description
 string path_password_eye

@@ -29,8 +29,8 @@ public class NameDialog extends DialogFragment {
 		mEntry = e;
 	}
 
-	public static NameDialog newInstance(Activity activity, DialogListener listener, 
-			FilelistFragment.FileEntry fileentry) {
+	public static NameDialog newInstance(Activity activity, FilelistFragment.NameListener listener,
+                                         FilelistFragment.FileEntry fileentry) {
 		mListener = listener;
 			
 		NameDialog frag = new NameDialog();

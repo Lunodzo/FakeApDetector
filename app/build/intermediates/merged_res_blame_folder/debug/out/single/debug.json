@@ -64,6 +64,10 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/ic_menu_star.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/layout_fragment_pcaplist.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_pcaplist.xml"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/drawable-mdpi_alert_warning.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/alert_warning.png"
     },
@@ -152,6 +156,10 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/ic_launcher.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/layout_list_wifi.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/list_wifi.xml"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/drawable-xhdpi_device_storage.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/device_storage.png"
     },
@@ -234,6 +242,10 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_action_record.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/ic_action_record.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/layout_fragment_pcaplist_row.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_pcaplist_row.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/res/merged/debug/layout_fragment_filelist.xml.flat",

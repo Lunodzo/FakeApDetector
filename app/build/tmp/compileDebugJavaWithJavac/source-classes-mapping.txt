@@ -43,6 +43,8 @@ net/kismetwireless/android/pcapcapture/MainActivity.java
  net.kismetwireless.android.pcapcapture.MainActivity$deferredUsbIntent
 net/kismetwireless/android/pcapcapture/WiFiScan.java
  net.kismetwireless.android.pcapcapture.WiFiScan
+ net.kismetwireless.android.pcapcapture.WiFiScan$1
+ net.kismetwireless.android.pcapcapture.WiFiScan$2
 net/kismetwireless/android/pcapcapture/FileusageFragment.java
  net.kismetwireless.android.pcapcapture.FileusageFragment
  net.kismetwireless.android.pcapcapture.FileusageFragment$1

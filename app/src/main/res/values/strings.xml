@@ -11,6 +11,7 @@
 
     <string name="pref_channel">Channel Preferences</string>
 
+    <string name="popup_scan">Scan</string>
     <string name="popup_share">Share</string>
     <string name="popup_delete">Delete</string>
     <string name="popup_rename">Rename</string>
@@ -23,6 +24,7 @@
     <string name="popup_size_unlimited">No Limit</string>
     <string name="no_usb_device">No USB device</string>
     <string name="small">Small</string>
+    <string name="no_data">No data</string>
 
     <color name="sidebar">#505050</color>
 

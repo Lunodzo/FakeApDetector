@@ -26,5 +26,10 @@
       <option name="name" value="85aa2381-624c-40f4-914e-112ba1bfc049" />
       <option name="url" value="https://mvnrepository.com/artifact/io.pkts/pkts-core" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenRepo" />
+      <option name="name" value="MavenRepo" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
   </component>
 </project>

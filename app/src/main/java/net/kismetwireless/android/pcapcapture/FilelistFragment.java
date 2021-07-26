@@ -13,12 +13,7 @@ package net.kismetwireless.android.pcapcapture;
  * 
  */
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.TreeMap;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
@@ -39,9 +34,16 @@ import android.widget.ImageView;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.TreeMap;
+
 public class FilelistFragment extends ListFragment {
 	private static String LOGTAG = "filelist-fragment";
-	private File mDirectory;
+    public Object registerFiletype;
+    private File mDirectory;
 	private int mTimeout;
 	private ArrayList<FileEntry> mFileList;
 	private TreeMap<String, FileTyper> mFileTypeMap = new TreeMap<String, FileTyper>(String.CASE_INSENSITIVE_ORDER);
@@ -83,6 +85,7 @@ public class FilelistFragment extends ListFragment {
 		super();
 	}
 
+	@SuppressLint("ValidFragment")
 	public FilelistFragment(File directory, int timer) {
 		super();
 
@@ -240,7 +243,7 @@ public class FilelistFragment extends ListFragment {
 		}
 	}
 	
-	public class FileDateComparator implements Comparator<FileEntry> {
+	public static class FileDateComparator implements Comparator<FileEntry> {
 		@Override
 		public int compare(FileEntry o1, FileEntry o2) {
 			if (o1.getFile().lastModified() < o2.getFile().lastModified())
@@ -344,7 +347,7 @@ public class FilelistFragment extends ListFragment {
 								@Override
 								public void onClick(View v) {
 									Intent i = new Intent(Intent.ACTION_SEND); 
-									i.setType("application/cap"); 
+									i.setType("application/pcap");
 									// i.setType("application/binary");
 									i.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + mitem.getDirectory() + 
 											"/" + mitem.getFilename())); 
@@ -389,7 +392,6 @@ public class FilelistFragment extends ListFragment {
 					popupWindow.show();
 				}
 			});
-
 			return view;
 		}
 
@@ -451,7 +453,7 @@ public class FilelistFragment extends ListFragment {
 		public abstract void updateDetailsView(final TextView v, final FileEntry fe); 
 	}
 	
-	public class NameListener implements DialogListener {	
+	public class NameListener implements DialogListener {
 		@Override
 		public void onDialogPositiveClick(DialogFragment dialog, int id) {
 			NameDialog nd = (NameDialog) dialog;
@@ -460,7 +462,7 @@ public class FilelistFragment extends ListFragment {
 			
 			// mFileList.remove(f);
 			
-			f.getFile().renameTo(new File(f.getDirectory() + "/" + nn + ".cap"));
+			f.getFile().renameTo(new File(f.getDirectory() + "/" + nn + ".pcap"));
 			f.setDirty();
 			
 			Populate();

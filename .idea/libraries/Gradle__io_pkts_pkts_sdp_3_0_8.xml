@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.pkts:pkts-sdp:3.0.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pkts/pkts-sdp/3.0.8/c8896cc8e56a4ada273ef61a4996db41c26aa232/pkts-sdp-3.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pkts/pkts-sdp/3.0.8/3343b741ddb4b74946459c44f5f789090aa7ca2d/pkts-sdp-3.0.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.pkts/pkts-sdp/3.0.8/e31ead3704dbbf3e0016b6610a79d23b2f91635/pkts-sdp-3.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

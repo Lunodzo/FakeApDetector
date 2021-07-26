@@ -1,7 +1,5 @@
 package net.kismetwireless.android.pcapcapture;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -11,7 +9,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import java.io.File;
 
 public class FilemanagerActivity extends Activity {
 	Context mContext;
@@ -43,7 +42,7 @@ public class FilemanagerActivity extends Activity {
 		setContentView(R.layout.activity_filemanager);
 		
 		mList = (FilelistFragment) getFragmentManager().findFragmentById(R.id.fragment_filelist);
-		mList.registerFiletype("cap", new PcapFileTyper());
+		mList.registerFiletype("pcap", new PcapFileTyper());
 		mList.setDirectory(new File(mLogDir));
 		mList.setRefreshTimer(2000); 
 		mList.setFavorites(true);
@@ -68,7 +67,7 @@ public class FilemanagerActivity extends Activity {
 	public void deleteFileDialog() {
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(mContext);
 
-		int nf = FileUtils.countFiles(new File(mLogDir), new String[] { "cap" }, 
+		int nf = FileUtils.countFiles(new File(mLogDir), new String[] { "pcap" },
 				false, true, mPreferences);
 
 		alertbox.setTitle("Delete " + nf + " Files?");
@@ -84,7 +83,7 @@ public class FilemanagerActivity extends Activity {
 
 		alertbox.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
-				FileUtils.deleteFiles(new File(mLogDir), new String[] { "cap" }, 
+				FileUtils.deleteFiles(new File(mLogDir), new String[] { "pcap" },
 						false, true, mPreferences);
 				mList.Populate();
 				mUsage.Populate();

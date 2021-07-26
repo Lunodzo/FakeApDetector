@@ -11,6 +11,7 @@
     <!-- android:minSdkVersion="13" -->
     <!-- android:targetSdkVersion="15" /> -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -38,11 +39,12 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="net.kismetwireless.android.pcapcapture.FakeAPScanner"
+            android:label="Scan the Fake"
             android:theme="@style/AppTheme" />
         <activity
             android:name="net.kismetwireless.android.pcapcapture.WiFiScan"
             android:parentActivityName="net.kismetwireless.android.pcapcapture.MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="net.kismetwireless.android.pcapcapture.MainActivity"
             android:label="@string/title_activity_main"
