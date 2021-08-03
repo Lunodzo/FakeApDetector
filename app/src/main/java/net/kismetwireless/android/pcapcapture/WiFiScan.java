@@ -106,6 +106,7 @@ public class WiFiScan extends AppCompatActivity {
             //TODO create a list of SSID, BSSID, signal strength and capabilities in this loop
             for(ScanResult scanResult: results) {
                 wifiManager.startScan();
+                //TODO Chech if the startScan() was necessary here
 
                 if(i == 0){
                     Toast.makeText(this, "First scan", Toast.LENGTH_SHORT).show();
@@ -120,7 +121,7 @@ public class WiFiScan extends AppCompatActivity {
                         arrayList.add(firstSSID);
                         Object[] collectedFisrtSSID = arrayList.toArray();
 
-                        Toast.makeText(this, "Found"+firstSSID, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Found "+firstSSID, Toast.LENGTH_SHORT).show();
                     }
 
                     //Toast.makeText(this, "Matokeo ni "+firstSSID+" "+firstBSSID+" "
