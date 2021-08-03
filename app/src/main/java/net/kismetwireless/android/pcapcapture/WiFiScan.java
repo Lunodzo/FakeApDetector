@@ -19,7 +19,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("ALL")
@@ -74,21 +73,26 @@ public class WiFiScan extends AppCompatActivity {
 
 
         int scanLoop = 2;
-        List<ScanResult> firstSSID;
-        List<ScanResult> secondSSID;
-        List<ScanResult> thirdSSID;
+        List<ScanResult> ssid;
+        List<ScanResult> bssid;
+        List<ScanResult> signal;
+        List<ScanResult> capabilities;
 
-        List<ScanResult> firstBSSID;
-        List<ScanResult> secondBSSID;
-        List<ScanResult> thirdBSSID;
+        String firstSSID;
+        String secondSSID;
+        String thirdSSID;
 
-        List<ScanResult> firstSignal;
-        List<ScanResult> secondSignal;
-        List<ScanResult> thirdSignal;
+        String firstBSSID;
+        String secondBSSID;
+        String thirdBSSID;
 
-        List<ScanResult> firstCapabilities;
-        List<ScanResult> secondCapabilities;
-        List<ScanResult> thirdCapabilities;
+        int firstSignal;
+        int secondSignal;
+        int thirdSignal;
+
+        String firstCapabilities;
+        String secondCapabilities;
+        String thirdCapabilities;
 
 //        String [] bssid = new String[10];
 //        int [] signal = new int[10];
@@ -106,26 +110,33 @@ public class WiFiScan extends AppCompatActivity {
                 if(i == 0){
                     Toast.makeText(this, "First scan", Toast.LENGTH_SHORT).show();
                     //firstSSID = Collections.singletonList(arrayList.add(scanResult.SSID));
-                    firstSSID = arrayList.add(scanResult.SSID);
-                    //String firstSSID = ssid[i];
-                    String firstBSSID = bssid[i];
-                    int firstSignal = signal[i];
-                    String firstCapabilities = capabilities[i];
+                    //Loop controls number of results from one scan
+                    for (int j=0; j < results.size(); j++){
+                        firstSSID = results.get(j).SSID;
+                        firstBSSID = results.get(j).BSSID;
+                        firstSignal = results.get(j).level;
+                        firstCapabilities = results.get(j).capabilities;
 
-                    Toast.makeText(this, "Matokeo ni "+firstSSID+" "+firstBSSID+" "
-                            +firstSignal+" "+firstCapabilities, Toast.LENGTH_SHORT).show();
+                        arrayList.add(firstSSID);
+                        Object[] collectedFisrtSSID = arrayList.toArray();
+
+                        Toast.makeText(this, "Found"+firstSSID, Toast.LENGTH_SHORT).show();
+                    }
+
+                    //Toast.makeText(this, "Matokeo ni "+firstSSID+" "+firstBSSID+" "
+                            //+firstSignal+" "+firstCapabilities, Toast.LENGTH_SHORT).show();
                 }else if(i == 1){
                     Toast.makeText(this, "Second scan", Toast.LENGTH_SHORT).show();
-                    String secondSSID = ssid[i];
-                    String secondBSSID = bssid[i];
-                    int secondSignal = signal[i];
-                    String secondCapabilities = capabilities[i];
+                    secondSSID = results.get(i).SSID;
+                    secondBSSID = results.get(i).BSSID;
+                    secondSignal = results.get(i).level;
+                    secondCapabilities = results.get(i).capabilities;
                 }else if (i == 2){
                     Toast.makeText(this, "Third scan", Toast.LENGTH_SHORT).show();
-                    String thirdSSID = ssid[i];
-                    String thirdBSSID = bssid[i];
-                    int thirdSignal = signal[i];
-                    String thirdCapabilities = capabilities[i];
+                    //thirdSSID = results.get(i).SSID;
+                    //thirdBSSID = results.get(i).BSSID;
+                    //thirdSignal = results.get(i).level;
+                    //thirdCapabilities = results.get(i).capabilities;
                 }else{
                     Toast.makeText(this, "Out of boundary", Toast.LENGTH_SHORT).show();
                 }
