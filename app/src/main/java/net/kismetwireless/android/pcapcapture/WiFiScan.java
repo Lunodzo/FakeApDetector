@@ -118,9 +118,11 @@ public class WiFiScan extends AppCompatActivity {
                         firstSignal = results.get(j).level;
                         firstCapabilities = results.get(j).capabilities;
 
+                        //Ignore these two lines
                         arrayList.add(firstSSID);
                         Object[] collectedFisrtSSID = arrayList.toArray();
 
+                        //Testing what is being stored
                         Toast.makeText(this, "Found "+firstSSID, Toast.LENGTH_SHORT).show();
                     }
 
