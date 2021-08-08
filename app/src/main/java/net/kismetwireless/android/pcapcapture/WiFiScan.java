@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.wifi.ScanResult;
@@ -26,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("ALL")
 public class WiFiScan extends AppCompatActivity {
@@ -113,7 +115,7 @@ public class WiFiScan extends AppCompatActivity {
                     String capabilities = scanResult.capabilities;
                     java.util.Date date = new java.util.Date();
                     java.sql.Date currentTime = new java.sql.Date(date.getTime());
-                    SimpleDateFormat dft = new SimpleDateFormat("HH:mm:ss");
+                    SimpleDateFormat dft = new SimpleDateFormat("HH:mm:ss.SSS");
                     String time = dft.format(currentTime);
 
                     //Write a statement to post these into Database
@@ -127,12 +129,17 @@ public class WiFiScan extends AppCompatActivity {
                 count++;
                 if(count <= 10){
                     wifiManager.startScan();
+                    try {
+                        TimeUnit.SECONDS.sleep(3);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }else{
                     unregisterReceiver(this);
                 }
             }else{
                 unregisterReceiver(this);
-                Toast.makeText(getApplicationContext(), "Scan Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "No Access Points found..", Toast.LENGTH_SHORT).show();
             }
 
 
@@ -236,8 +243,11 @@ public class WiFiScan extends AppCompatActivity {
             db.execSQL(deleteContent);
         }
 
-        public void getStoredAPs(){
+        public Cursor getStoredAPs(){
             //TODO Fetch data from database then do the logic
+            SQLiteDatabase db = getReadableDatabase();
+            String selectQuery = "SELECT * FROM "+TABLE_AP+" WHERE round=10";
+            return db.rawQuery(selectQuery, null);
         }
     }
 }
