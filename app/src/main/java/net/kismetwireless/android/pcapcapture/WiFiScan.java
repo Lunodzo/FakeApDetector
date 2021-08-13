@@ -69,8 +69,8 @@ public class WiFiScan extends AppCompatActivity {
         scanEvilButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Second button actions
-                //scanEvilWiFi();
+                //Call the Attack scanning method
+                databaseHandler.getStoredDuplicateAPs();
             }
         });
 
@@ -93,7 +93,6 @@ public class WiFiScan extends AppCompatActivity {
     }
 
 
-
     BroadcastReceiver wifiReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -113,6 +112,7 @@ public class WiFiScan extends AppCompatActivity {
                     String bssid = scanResult.BSSID;
                     int rssi = scanResult.level;
                     String capabilities = scanResult.capabilities;
+                    //long another = scanResult.timestamp;
                     java.util.Date date = new java.util.Date();
                     java.sql.Date currentTime = new java.sql.Date(date.getTime());
                     SimpleDateFormat dft = new SimpleDateFormat("HH:mm:ss.SSS");
@@ -128,9 +128,11 @@ public class WiFiScan extends AppCompatActivity {
                 }
                 count++;
                 if(count <= 10){
+                    //Another scan
                     wifiManager.startScan();
+                    //Sleep for three seconds before attempting another scan
                     try {
-                        TimeUnit.SECONDS.sleep(3);
+                        TimeUnit.SECONDS.sleep(4);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -141,7 +143,6 @@ public class WiFiScan extends AppCompatActivity {
                 unregisterReceiver(this);
                 Toast.makeText(getApplicationContext(), "No Access Points found..", Toast.LENGTH_SHORT).show();
             }
-
 
             for (ScanResult scanResult: results){
                 arrayList.add(scanResult.SSID +" * "+ scanResult.capabilities + " * "+ scanResult.BSSID+ " * "
@@ -243,11 +244,40 @@ public class WiFiScan extends AppCompatActivity {
             db.execSQL(deleteContent);
         }
 
-        public Cursor getStoredAPs(){
+        public void getStoredDuplicateAPs(){
             //TODO Fetch data from database then do the logic
             SQLiteDatabase db = getReadableDatabase();
-            String selectQuery = "SELECT * FROM "+TABLE_AP+" WHERE round=10";
-            return db.rawQuery(selectQuery, null);
+//            String selectQuery1 = "SELECT ssid, bssid, level from accesspoints a1 where exists " +
+//                    "(select 1 from accesspoints a2 where a1.ssid = a2.ssid and a1.bssid = a2.bssid " +
+//                    "and a1.capabilities <> a2.capabilities) GROUP BY ssid";
+
+            String selectQuery = "SELECT ssid, bssid from accesspoints GROUP BY ssid, bssid HAVING " +
+                    "min(capabilities) <> max(capabilities)";
+            Cursor resultSet = db.rawQuery(selectQuery, null);
+            resultSet.moveToFirst();
+            if(resultSet.getCount()>=1){
+                String fakeAPssid = resultSet.getString(0);
+                Toast.makeText(getApplicationContext(), "Fake AP "+fakeAPssid+" detected", Toast.LENGTH_SHORT).show();
+            }else{
+                //TODO Calculate average signal strength based on the benchmarhmark of the first scan
+                //The everything that falls not in the range of the average signal level might be fake
+
+                String selectFirstSignal = "select ssid, first_value(level) OVER win as" +
+                        "first_level from accesspoints WINDOW win" +
+                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)";
+
+                String viewOfDuplicateOpenAP = "CREATE view duplicateCapabilities AS " +
+                        "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
+                        "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
+                        "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
+                        "a1.capabilities = a2.capabilities) EXCEPT" +
+                        "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
+                        "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
+                        "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
+                        "a1.capabilities != a2.capabilities)";
+
+                Toast.makeText(getApplicationContext(), "No fake AP", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

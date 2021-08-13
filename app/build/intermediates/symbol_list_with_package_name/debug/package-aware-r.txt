@@ -1725,6 +1725,8 @@ drawable ic_keyboard_black_24dp
 drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_menu_delete
+drawable ic_menu_icon_background
+drawable ic_menu_icon_foreground
 drawable ic_menu_rename
 drawable ic_menu_scan_background
 drawable ic_menu_scan_foreground
@@ -2445,6 +2447,8 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu activity_main
 menu popup_size
+mipmap ic_menu_icon
+mipmap ic_menu_icon_round
 mipmap ic_menu_scan
 mipmap ic_menu_scan_round
 plurals mtrl_badge_content_description

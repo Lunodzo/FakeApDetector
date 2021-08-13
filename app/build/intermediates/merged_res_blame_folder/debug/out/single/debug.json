@@ -20,12 +20,16 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/device_storage.png"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_icon_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_icon_background.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_star.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_star.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/ic_launcher.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_action_record.png.flat",
@@ -36,12 +40,12 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/popup_item_row.xml"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_rename.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_rename.png"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_popup_item.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/popup_item.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_rename.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_rename.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_action_chanhop.png.flat",
@@ -52,12 +56,12 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-anydpi-v26/ic_menu_scan_round.xml"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_fragment_filelist_row.xml.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_filelist_row.xml"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher_background.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_fragment_filelist_row.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_filelist_row.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_popup_item.png.flat",
@@ -72,12 +76,24 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/popup_item.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_menu_icon_round.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-hdpi/ic_menu_icon_round.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/menu_activity_main.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/menu/activity_main.xml"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_ic_menu_icon_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_menu_icon_background.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_list_wifi.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/list_wifi.xml"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_menu_icon.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xxhdpi/ic_menu_icon.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_ic_menu_scan_background.png.flat",
@@ -92,6 +108,10 @@
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_scan_foreground.xml"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-anydpi-v21_ic_menu_icon_background.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_icon_background.xml"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxhdpi_ic_menu_scan_foreground.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_menu_scan_foreground.png"
     },
@@ -104,12 +124,20 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-hdpi/action_help.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_menu_icon_foreground.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_icon_foreground.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_dialog_rename.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/dialog_rename.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/xml_channel_preferences.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/xml/channel_preferences.xml"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_menu_icon.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xhdpi/ic_menu_icon.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_chanhop.png.flat",
@@ -120,8 +148,16 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_share.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_menu_icon.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-hdpi/ic_menu_icon.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_menu_scan_background.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_scan_background.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_menu_icon_round.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xxxhdpi/ic_menu_icon_round.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_search.png.flat",
@@ -142,6 +178,14 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_action_settings.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-hdpi/action_settings.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxhdpi_ic_menu_icon_foreground.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_menu_icon_foreground.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxhdpi_ic_menu_icon_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_menu_icon_background.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_alert_warning.png.flat",
@@ -176,8 +220,16 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/navigation_next_item.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_menu_icon_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_icon_background.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_fragment_pcaplist_row.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_pcaplist_row.xml"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_menu_icon_round.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-mdpi/ic_menu_icon_round.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable_icon_wireshark.png.flat",
@@ -192,16 +244,24 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-hdpi/ic_menu_rename.png"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_action_settings.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/action_settings.png"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_menu_scan_background.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_menu_scan_background.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_action_settings.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/action_settings.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_action_help.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/action_help.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-anydpi-v21_ic_menu_icon_foreground.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_icon_foreground.xml"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_menu_icon_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_icon_background.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_action_settings.png.flat",
@@ -218,6 +278,10 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_stop.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/ic_action_stop.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_menu_icon.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-anydpi-v26/ic_menu_icon.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_statusbar.png.flat",
@@ -252,6 +316,14 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-hdpi/device_storage.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_icon_foreground.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_icon_foreground.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_menu_icon_round.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-anydpi-v26/ic_menu_icon_round.xml"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher_background.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },
@@ -284,6 +356,10 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/rating_important.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_menu_icon.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xxxhdpi/ic_menu_icon.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_launcher.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/ic_launcher.png"
     },
@@ -308,6 +384,14 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_action_stop.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_menu_icon_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_menu_icon_background.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_ic_menu_icon_foreground.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_menu_icon_foreground.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_fragment_fileusage.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_fileusage.xml"
     },
@@ -328,12 +412,24 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_pcaplist.xml"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_menu_icon.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-mdpi/ic_menu_icon.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_menu_icon_round.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xhdpi/ic_menu_icon_round.png"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-anydpi-v21_ic_menu_scan_background.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_scan_background.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_action_stop.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/ic_action_stop.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_menu_icon_foreground.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_menu_icon_foreground.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_ic_launcher_background.png.flat",
@@ -346,6 +442,10 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_menu_delete.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/ic_menu_delete.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_menu_icon_round.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xxhdpi/ic_menu_icon_round.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_menu_share.png.flat",
@@ -374,6 +474,10 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_menu_scan.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-anydpi-v26/ic_menu_scan.xml"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_menu_icon_foreground.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_icon_foreground.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",

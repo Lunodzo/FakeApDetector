@@ -1724,6 +1724,8 @@ int drawable ic_keyboard_black_24dp 0x7f08006e
 int drawable ic_launcher 0x7f08006f
 int drawable ic_launcher_background 0x7f080070
 int drawable ic_menu_delete 0x7f080071
+int drawable ic_menu_icon_background 0x7f0800a5
+int drawable ic_menu_icon_foreground 0x7f0800a6
 int drawable ic_menu_rename 0x7f080072
 int drawable ic_menu_scan_background 0x7f080073
 int drawable ic_menu_scan_foreground 0x7f080074
@@ -2444,6 +2446,8 @@ int layout text_view_with_theme_line_height 0x7f0c0083
 int layout text_view_without_line_height 0x7f0c0084
 int menu activity_main 0x7f0d0000
 int menu popup_size 0x7f0d0001
+int mipmap ic_menu_icon 0x7f0e0002
+int mipmap ic_menu_icon_round 0x7f0e0003
 int mipmap ic_menu_scan 0x7f0e0000
 int mipmap ic_menu_scan_round 0x7f0e0001
 int plurals mtrl_badge_content_description 0x7f0f0000
