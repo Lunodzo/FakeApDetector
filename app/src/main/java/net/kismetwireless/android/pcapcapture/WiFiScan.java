@@ -264,19 +264,37 @@ public class WiFiScan extends AppCompatActivity {
 
                 String selectFirstSignal = "select ssid, first_value(level) OVER win as" +
                         "first_level from accesspoints WINDOW win" +
-                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)";
+                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)" +
+                        "LIMIT 1";
 
                 String viewOfDuplicateOpenAP = "CREATE view duplicateCapabilities AS " +
                         "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
                         "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
-                        "a1.capabilities = a2.capabilities) EXCEPT" +
+                        "a1.capabilities = a2.capabilities) EXCEPT " +
                         "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
                         "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
                         "a1.capabilities != a2.capabilities)";
+                db.execSQL(viewOfDuplicateOpenAP);
 
-                Toast.makeText(getApplicationContext(), "No fake AP", Toast.LENGTH_SHORT).show();
+                String selectFirstSignalOpen = "SELECT first_value(level) OVER win as " +
+                        "first_level from duplicateCapabilities WINDOW win " +
+                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) " +
+                        "LIMIT 1";
+                Cursor firstSignal = db.rawQuery(selectFirstSignalOpen, null);
+                int storeFirstSignal = firstSignal.getInt(0);
+
+                String detectDuplicateOpenAP = "SELECT * FROM duplicateCapabilities WHERE level " +
+                        " NOT BETWEEN " +(storeFirstSignal-5)+ " AND " +storeFirstSignal+5;
+                Cursor detector = db.rawQuery(detectDuplicateOpenAP, null);
+                detector.moveToFirst();
+                if(detector.getCount()>=1){
+                    String fakeAPssid = resultSet.getString(0);
+                    Toast.makeText(getApplicationContext(), "Fake AP "+fakeAPssid+" detected", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getApplicationContext(), "No fake AP", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
