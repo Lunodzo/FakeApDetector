@@ -218,7 +218,6 @@ public class WiFiScan extends AppCompatActivity {
                                        int round, boolean comment, String time){
             SQLiteDatabase db = this.getWritableDatabase();
 
-
             ContentValues values = new ContentValues();
             values.put(SSID, ssid);
             values.put(BSSID, bssid);
@@ -255,7 +254,7 @@ public class WiFiScan extends AppCompatActivity {
                     "min(capabilities) <> max(capabilities)";
             Cursor resultSet = db.rawQuery(selectQuery, null);
             resultSet.moveToFirst();
-            if(resultSet.getCount()>=1){
+            if(resultSet.getCount() >=1 ){
                 String fakeAPssid = resultSet.getString(0);
                 Toast.makeText(getApplicationContext(), "Fake AP "+fakeAPssid+" detected", Toast.LENGTH_SHORT).show();
             }else{
