@@ -250,6 +250,7 @@ public class WiFiScan extends AppCompatActivity {
 //                    "(select 1 from accesspoints a2 where a1.ssid = a2.ssid and a1.bssid = a2.bssid " +
 //                    "and a1.capabilities <> a2.capabilities) GROUP BY ssid";
 
+            //Fetch duplicate AP with different Capabilities (ENC, AUTH, CIPHER)
             String selectQuery = "SELECT ssid, bssid from accesspoints GROUP BY ssid, bssid HAVING " +
                     "min(capabilities) <> max(capabilities)";
             Cursor resultSet = db.rawQuery(selectQuery, null);
@@ -261,11 +262,14 @@ public class WiFiScan extends AppCompatActivity {
                 //TODO Calculate average signal strength based on the benchmarhmark of the first scan
                 //The everything that falls not in the range of the average signal level might be fake
 
+                Toast.makeText(getApplicationContext(), "No difference in Capabilities", Toast.LENGTH_SHORT).show();
+                //This is not executed yet
                 String selectFirstSignal = "select ssid, first_value(level) OVER win as" +
                         "first_level from accesspoints WINDOW win" +
                         "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)" +
                         "LIMIT 1";
 
+                //Select all APs with duplicate ssid, bssid and capabilities
                 String viewOfDuplicateOpenAP = "CREATE view duplicateCapabilities AS " +
                         "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
@@ -277,10 +281,9 @@ public class WiFiScan extends AppCompatActivity {
                         "a1.capabilities != a2.capabilities)";
                 db.execSQL(viewOfDuplicateOpenAP);
 
-                String selectFirstSignalOpen = "SELECT first_value(level) OVER win as " +
-                        "first_level from duplicateCapabilities WINDOW win " +
-                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) " +
-                        "LIMIT 1";
+                //Fetch the first value of the signal strength and store in a variable
+                String selectFirstSignalOpen = "select first_value(level) OVER win as first_level from accesspoints WINDOW win " +
+                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) LIMIT 1";
                 Cursor firstSignal = db.rawQuery(selectFirstSignalOpen, null);
                 int storeFirstSignal = firstSignal.getInt(0);
 
