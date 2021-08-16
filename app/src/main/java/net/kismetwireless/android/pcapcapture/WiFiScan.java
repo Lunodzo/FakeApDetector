@@ -53,6 +53,7 @@ public class WiFiScan extends AppCompatActivity {
         //Delete Data about scanned APs if they exist, this allows to start a fresh scan
         DatabaseHandler databaseHandler = new DatabaseHandler(getApplicationContext());
         databaseHandler.deleteApContents();
+        databaseHandler.deleteApViewContents();
 
         //Button to scan Wifi
         scanButton.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +153,7 @@ public class WiFiScan extends AppCompatActivity {
         }
     };
 
+    //DID NOT PUT IT INTO ACTION, YET
     public class WifiScanAsyncTask extends AsyncTask<Void, String, String> {
         ProgressDialog dg = new ProgressDialog(getApplicationContext());
 
@@ -173,6 +175,8 @@ public class WiFiScan extends AppCompatActivity {
         }
     }
 
+
+    //A CLASS TO HANDLE DATABASE OPERATIONS
     public class DatabaseHandler extends SQLiteOpenHelper{
         private static final String TAG = "DatabaseHelper";
         private static final int DATABASE_VERSION = 1;
@@ -243,8 +247,14 @@ public class WiFiScan extends AppCompatActivity {
             db.execSQL(deleteContent);
         }
 
+        public void deleteApViewContents(){
+            SQLiteDatabase db = this.getWritableDatabase();
+            String deleteContent = "DROP VIEW IF EXISTS duplicateCapabilities ";
+            db.execSQL(deleteContent);
+        }
+
         public void getStoredDuplicateAPs(){
-            //TODO Fetch data from database then do the logic
+            //Fetch data from database then do the logic
             SQLiteDatabase db = getReadableDatabase();
 //            String selectQuery1 = "SELECT ssid, bssid, level from accesspoints a1 where exists " +
 //                    "(select 1 from accesspoints a2 where a1.ssid = a2.ssid and a1.bssid = a2.bssid " +
@@ -259,40 +269,46 @@ public class WiFiScan extends AppCompatActivity {
                 String fakeAPssid = resultSet.getString(0);
                 Toast.makeText(getApplicationContext(), "Fake AP "+fakeAPssid+" detected", Toast.LENGTH_SHORT).show();
             }else{
-                //TODO Calculate average signal strength based on the benchmarhmark of the first scan
+                //Calculate average signal strength based on the benchmarhmark of the first scan
                 //The everything that falls not in the range of the average signal level might be fake
 
                 Toast.makeText(getApplicationContext(), "No difference in Capabilities", Toast.LENGTH_SHORT).show();
                 //This is not executed yet
-                String selectFirstSignal = "select ssid, first_value(level) OVER win as" +
-                        "first_level from accesspoints WINDOW win" +
-                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)" +
-                        "LIMIT 1";
+//                String selectFirstSignal = "select ssid, first_value(level) OVER win as" +
+//                        "first_level from accesspoints WINDOW win" +
+//                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)" +
+//                        "LIMIT 1";
 
                 //Select all APs with duplicate ssid, bssid and capabilities
-                String viewOfDuplicateOpenAP = "CREATE view duplicateCapabilities AS " +
-                        "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
+                //TODO On this query add a condition to filter the APs with Open OR [ESS] Capabilities
+                String viewOfDuplicateOpenAP = "CREATE TEMP view duplicateCapabilities AS " +
+                        "SELECT ssid, bssid, capabilities, level,time FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
                         "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
-                        "a1.capabilities = a2.capabilities) EXCEPT " +
-                        "SELECT ssid, bssid, capabilities, level FROM accesspoints a1 " +
+                        "a1.capabilities = a2.capabilities AND capabilities\n" +
+                        "= \"[ESS]\") EXCEPT " +
+                        "SELECT ssid, bssid, capabilities, level, time FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
                         "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
                         "a1.capabilities != a2.capabilities)";
                 db.execSQL(viewOfDuplicateOpenAP);
 
                 //Fetch the first value of the signal strength and store in a variable
-                String selectFirstSignalOpen = "select first_value(level) OVER win as first_level from accesspoints WINDOW win " +
-                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) LIMIT 1";
+//                String selectFirstSignalOpen = "select first_value(level) OVER win as first_level from duplicateCapabilities WINDOW win " +
+//                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) LIMIT 1";
+                String selectFirstSignalOpen = "SELECT level FROM duplicateCapabilities ORDER by time LIMIT 1";
                 Cursor firstSignal = db.rawQuery(selectFirstSignalOpen, null);
+                firstSignal.moveToFirst();
                 int storeFirstSignal = firstSignal.getInt(0);
 
+                Toast.makeText(getApplicationContext(), "Signal stored is "+storeFirstSignal, Toast.LENGTH_SHORT).show();
+
                 String detectDuplicateOpenAP = "SELECT * FROM duplicateCapabilities WHERE level " +
-                        " NOT BETWEEN " +(storeFirstSignal-5)+ " AND " +storeFirstSignal+5;
+                        " NOT BETWEEN " +(storeFirstSignal-10)+ " AND " +storeFirstSignal+5;
                 Cursor detector = db.rawQuery(detectDuplicateOpenAP, null);
                 detector.moveToFirst();
                 if(detector.getCount()>=1){
-                    String fakeAPssid = resultSet.getString(0);
+                    String fakeAPssid = detector.getString(0);
                     Toast.makeText(getApplicationContext(), "Fake AP "+fakeAPssid+" detected", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(getApplicationContext(), "No fake AP", Toast.LENGTH_SHORT).show();
