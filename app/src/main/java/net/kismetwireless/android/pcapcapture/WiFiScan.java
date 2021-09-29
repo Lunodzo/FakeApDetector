@@ -27,7 +27,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("ALL")
 public class WiFiScan extends AppCompatActivity {
@@ -71,7 +70,11 @@ public class WiFiScan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Call the Attack scanning method
+                long startTime = System.nanoTime();
                 databaseHandler.getStoredDuplicateAPs();
+                long endTime = System.nanoTime();
+                long duration = (endTime - startTime);
+                Toast.makeText(getApplicationContext(), "Time taken to execute is: "+duration/1000000, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -121,9 +124,14 @@ public class WiFiScan extends AppCompatActivity {
 
                     //Write a statement to post these into Database
                     boolean insert = databaseHandler.addAccessPoints(ssid, bssid, rssi, capabilities, count, false, time);
-                    if (insert == true){
-                        Toast.makeText(getApplicationContext(), count+" Round Data inserted", Toast.LENGTH_SHORT).show();
-                    }else{
+
+                    //This is disabled to reduce number of Toasts
+//                    if (insert == true){
+//                        Toast.makeText(getApplicationContext(), count+" Round Data inserted", Toast.LENGTH_SHORT).show();
+//                    }else{
+//                        Toast.makeText(getApplicationContext(), "Data insert Failed", Toast.LENGTH_SHORT).show();
+//                    }
+                    if(insert == false){
                         Toast.makeText(getApplicationContext(), "Data insert Failed", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -131,12 +139,12 @@ public class WiFiScan extends AppCompatActivity {
                 if(count <= 10){
                     //Another scan
                     wifiManager.startScan();
-                    //Sleep for three seconds before attempting another scan
-                    try {
-                        TimeUnit.SECONDS.sleep(4);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    //Sleep for three seconds before attempting another scan [Sleep is now commented]
+//                    try {
+//                        TimeUnit.SECONDS.sleep(4);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                 }else{
                     unregisterReceiver(this);
                 }
@@ -151,6 +159,7 @@ public class WiFiScan extends AppCompatActivity {
                 arrayAdapter.notifyDataSetChanged();
             }
         }
+
     };
 
     //DID NOT PUT IT INTO ACTION, YET
@@ -272,20 +281,20 @@ public class WiFiScan extends AppCompatActivity {
                 //Calculate average signal strength based on the benchmarhmark of the first scan
                 //The everything that falls not in the range of the average signal level might be fake
 
-                Toast.makeText(getApplicationContext(), "No difference in Capabilities", Toast.LENGTH_SHORT).show();
-                //This is not executed yet
-//                String selectFirstSignal = "select ssid, first_value(level) OVER win as" +
-//                        "first_level from accesspoints WINDOW win" +
-//                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)" +
-//                        "LIMIT 1";
+                //Toast.makeText(getApplicationContext(), "No difference in Capabilities", Toast.LENGTH_SHORT).show();
+
 
                 //Select all APs with duplicate ssid, bssid and capabilities
-                //TODO On this query add a condition to filter the APs with Open OR [ESS] Capabilities
+                //On this query add a condition to filter the APs with Open OR [ESS] Capabilities [DONE]
+
+                String deleteContent = "DROP VIEW IF EXISTS duplicateCapabilities ";
+                db.execSQL(deleteContent);
+
                 String viewOfDuplicateOpenAP = "CREATE TEMP view duplicateCapabilities AS " +
                         "SELECT ssid, bssid, capabilities, level,time FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
                         "a1.ssid = a2.ssid AND a1.bssid = a2.bssid AND " +
-                        "a1.capabilities = a2.capabilities AND capabilities\n" +
+                        "a1.capabilities = a2.capabilities AND capabilities" +
                         "= \"[ESS]\") EXCEPT " +
                         "SELECT ssid, bssid, capabilities, level, time FROM accesspoints a1 " +
                         "WHERE EXISTS (SELECT 1 FROM accesspoints a2 WHERE " +
@@ -294,19 +303,23 @@ public class WiFiScan extends AppCompatActivity {
                 db.execSQL(viewOfDuplicateOpenAP);
 
                 //Fetch the first value of the signal strength and store in a variable
-//                String selectFirstSignalOpen = "select first_value(level) OVER win as first_level from duplicateCapabilities WINDOW win " +
-//                        "AS (ORDER BY time ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) LIMIT 1";
                 String selectFirstSignalOpen = "SELECT level FROM duplicateCapabilities ORDER by time LIMIT 1";
                 Cursor firstSignal = db.rawQuery(selectFirstSignalOpen, null);
                 firstSignal.moveToFirst();
                 int storeFirstSignal = firstSignal.getInt(0);
 
-                Toast.makeText(getApplicationContext(), "Signal stored is "+storeFirstSignal, Toast.LENGTH_SHORT).show();
+                String detectDuplicateOpenAP = "SELECT * FROM duplicateCapabilities dp1 WHERE EXISTS " +
+                        "(SELECT 1 FROM duplicateCapabilities dp2 WHERE dp1.ssid = dp2.ssid AND " +
+                        "dp1.bssid = dp2.bssid AND dp1.capabilities = dp2.capabilities AND level " +
+                        "NOT BETWEEN " +(storeFirstSignal-10)+ " AND " +(storeFirstSignal+5)+")";
 
-                String detectDuplicateOpenAP = "SELECT * FROM duplicateCapabilities WHERE level " +
-                        " NOT BETWEEN " +(storeFirstSignal-10)+ " AND " +storeFirstSignal+5;
+//                        "(SELECT 1 FROM duplicateCapabilities dp2 WHERE dlevel " +
+//                        " NOT BETWEEN " +(storeFirstSignal-10)+ " AND " +(storeFirstSignal+5));
+
                 Cursor detector = db.rawQuery(detectDuplicateOpenAP, null);
                 detector.moveToFirst();
+
+                //Toast.makeText(getApplicationContext(), "Signal stored is "+storeFirstSignal+" Upper is "+(storeFirstSignal-10)+" Lower "+(storeFirstSignal+5), Toast.LENGTH_SHORT).show();
                 if(detector.getCount()>=1){
                     String fakeAPssid = detector.getString(0);
                     Toast.makeText(getApplicationContext(), "Fake AP "+fakeAPssid+" detected", Toast.LENGTH_SHORT).show();

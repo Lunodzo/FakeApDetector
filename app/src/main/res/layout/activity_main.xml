@@ -273,7 +273,7 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:layout_weight="1"
-                android:text="Scan Attacks"
+                android:text="Logged PCAPs"
                 android:drawableLeft="@drawable/ic_action_search"
                 android:textSize="15dp"
                 android:onClick="startScanning"/>

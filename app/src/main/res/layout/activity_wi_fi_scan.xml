@@ -32,10 +32,8 @@
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:layout_toRightOf="@+id/btn_List"
-            android:text="Scan Evil Twin"
+            android:text="Scan Fake AP"
             android:layout_alignParentRight="true"
             tools:ignore="HardcodedText"
             android:layout_alignParentBottom="true"/>
-
-
 </RelativeLayout>
