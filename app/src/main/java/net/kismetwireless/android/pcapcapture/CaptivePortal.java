@@ -46,6 +46,7 @@ public class CaptivePortal extends Activity {
         //Read HTTP response
         WebResourceResponse errorResponse = null;
         WebResourceRequest request;
+        //TODO Capture error codes after submiting
 //        int statusCode = errorResponse.getStatusCode();
 //        Toast.makeText(getApplicationContext(), "Hello status code is "+statusCode, Toast.LENGTH_SHORT).show();
 //        if(statusCode == 200){
