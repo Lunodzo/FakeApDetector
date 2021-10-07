@@ -25,6 +25,7 @@
     <string name="no_usb_device">No USB device</string>
     <string name="small">Small</string>
     <string name="no_data">No data</string>
+    <string name="triattext">TriatText</string>
 
     <color name="sidebar">#505050</color>
 

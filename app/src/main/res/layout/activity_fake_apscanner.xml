@@ -18,6 +18,4 @@
         android:layout_marginBottom="15dp"
         android:layout_weight="1.0"
         tools:layout="@layout/fragment_pcaplist_row" />
-
-
 </LinearLayout>

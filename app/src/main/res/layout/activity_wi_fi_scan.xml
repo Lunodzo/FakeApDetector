@@ -6,34 +6,35 @@
     android:orientation="vertical">
 
     <ListView
+        android:id="@+id/wifiList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="40dp"
         android:layout_weight="1"
-        android:layout_margin="20dp"
-        android:dividerHeight="2dp"
         android:drawSelectorOnTop="false"
-        android:id="@+id/wifiList"/>
+        />
 
-        <Button
-            android:id="@+id/btn_List"
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="bottom"
-            android:text="Rescan"
-            tools:ignore="HardcodedText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/btn_List"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:text="Captive Portal"
+        tools:ignore="HardcodedText" />
 
-        <Button
-            android:id="@+id/btn_scan_evil"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:layout_toRightOf="@+id/btn_List"
-            android:text="Scan Fake AP"
-            android:layout_alignParentRight="true"
-            tools:ignore="HardcodedText"
-            android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/btn_scan_evil"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_toRightOf="@+id/btn_List"
+        android:text="Scan Fake AP"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>

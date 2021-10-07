@@ -70,6 +70,10 @@
             android:name="net.kismetwireless.android.pcapcapture.FilemanagerActivity"
             android:label="@string/title_activity_filemanager"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name="net.kismetwireless.android.pcapcapture.CaptivePortal"
+            android:label="CaptivePortal"
+            android:theme="@style/AppTheme" />
 
         <receiver android:name="net.kismetwireless.android.pcapcapture.WiFiScan" >
             <intent-filter>

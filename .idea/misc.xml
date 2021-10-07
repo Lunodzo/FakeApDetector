@@ -4,9 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/wifi.xml" value="0.13020833333333334" />
-        <entry key="app/src/main/res/layout/activity_fake_apscanner.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_captive_portal.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_fake_apscanner.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_wi_fi_scan.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_wi_fi_scan.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_filelist.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_list_wifi.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_pcaplist.xml" value="0.2132701421800948" />
+        <entry key="app/src/main/res/layout/fragment_pcaplist_row.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/list_wifi.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/popup_item_row.xml" value="0.25" />
       </map>
     </option>
   </component>

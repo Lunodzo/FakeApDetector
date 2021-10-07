@@ -24,12 +24,12 @@
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_icon_background.png"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_star.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_star.png"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_star.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_star.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_action_record.png.flat",
@@ -40,12 +40,12 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/popup_item_row.xml"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_popup_item.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/popup_item.png"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_menu_rename.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-mdpi/ic_menu_rename.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_popup_item.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-ldpi/popup_item.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_action_chanhop.png.flat",
@@ -56,12 +56,12 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-anydpi-v26/ic_menu_scan_round.xml"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_fragment_filelist_row.xml.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_filelist_row.xml"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_popup_item.png.flat",
@@ -86,10 +86,6 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_ic_menu_icon_background.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_menu_icon_background.png"
-    },
-    {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_list_wifi.xml.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/list_wifi.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_menu_icon.png.flat",
@@ -124,6 +120,10 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-hdpi/action_help.png"
     },
     {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_activity_captive_portal.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/activity_captive_portal.xml"
+    },
+    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_menu_icon_foreground.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_icon_foreground.png"
     },
@@ -152,12 +152,12 @@
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-hdpi/ic_menu_icon.png"
     },
     {
-        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_menu_scan_background.png.flat",
-        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_scan_background.png"
-    },
-    {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_menu_icon_round.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/mipmap-xxxhdpi/ic_menu_icon_round.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_menu_scan_background.png.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_scan_background.png"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_search.png.flat",
@@ -366,6 +366,10 @@
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-hdpi_rating_not_important.png.flat",
         "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/drawable-hdpi/rating_not_important.png"
+    },
+    {
+        "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/layout_fragment_list_wifi.xml.flat",
+        "source": "/root/StudioProjects/FakeApDetector/app/src/main/res/layout/fragment_list_wifi.xml"
     },
     {
         "merged": "/root/StudioProjects/FakeApDetector/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_launcher_background.png.flat",

@@ -1879,6 +1879,9 @@ int id buttonPanel 0x7f090062
 int id cache_measures 0x7f090063
 int id cancel_action 0x7f090064
 int id cancel_button 0x7f090065
+int id captive 0x7f0901ef
+int id captive_all 0x7f0901f0
+int id captive_text 0x7f0901f1
 int id center 0x7f090066
 int id center_horizontal 0x7f090067
 int id center_vertical 0x7f090068
@@ -2205,6 +2208,7 @@ int id test_radiobutton_android_button_tint 0x7f0901a8
 int id test_radiobutton_app_button_tint 0x7f0901a9
 int id text 0x7f0901aa
 int id text2 0x7f0901ab
+int id textAPDetails 0x7f0901f3
 int id textChannelHop 0x7f0901ac
 int id textChannelHopSmall 0x7f0901ad
 int id textDashCaptureControl 0x7f0901ae
@@ -2339,6 +2343,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
+int layout activity_captive_portal 0x7f0c0085
 int layout activity_fake_apscanner 0x7f0c001c
 int layout activity_filemanager 0x7f0c001d
 int layout activity_main 0x7f0c001e
@@ -2363,9 +2368,9 @@ int layout dialog_rename 0x7f0c0030
 int layout fragment_filelist 0x7f0c0031
 int layout fragment_filelist_row 0x7f0c0032
 int layout fragment_fileusage 0x7f0c0033
+int layout fragment_list_wifi 0x7f0c0086
 int layout fragment_pcaplist 0x7f0c0034
 int layout fragment_pcaplist_row 0x7f0c0035
-int layout list_wifi 0x7f0c0036
 int layout material_chip_input_combo 0x7f0c0037
 int layout material_clock_display 0x7f0c0038
 int layout material_clock_display_divider 0x7f0c0039
@@ -2575,6 +2580,7 @@ int string small 0x7f100078
 int string status_bar_notification_info_overflow 0x7f100079
 int string title_activity_filemanager 0x7f10007a
 int string title_activity_main 0x7f10007b
+int string triattext 0x7f10007c
 int style AlertDialog_AppCompat 0x7f110000
 int style AlertDialog_AppCompat_Light 0x7f110001
 int style AndroidThemeColorAccentYellow 0x7f110002

@@ -60,7 +60,7 @@
 31-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:26:9-37
 32
 33    <application
-33-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:29:5-76:19
+33-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:29:5-81:19
 34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 34-->[androidx.core:core:1.5.0] /root/.gradle/caches/transforms-3/e759884e8e1539e68246ec4d8729cc98/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
 35        android:debuggable="true"
@@ -135,32 +135,40 @@
 71-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:62:13-63
 72            android:theme="@style/AppTheme" />
 72-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:63:13-44
-73
-74        <receiver android:name="net.kismetwireless.android.pcapcapture.WiFiScan" >
-74-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:65:9-71:20
-74-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:65:19-43
-75            <intent-filter>
-75-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:66:13-70:29
-76                <action android:name="android.intent.action.MAIN" />
-76-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:45:17-69
-76-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:45:25-66
+73        <activity
+73-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:65:9-68:47
+74            android:name="net.kismetwireless.android.pcapcapture.CaptivePortal"
+74-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:66:13-42
+75            android:label="CaptivePortal"
+75-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:67:13-42
+76            android:theme="@style/AppTheme" />
+76-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:68:13-44
 77
-78                <category android:name="android.intent.category.LAUNCHER" />
-78-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:46:17-77
-78-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:46:27-74
-79
-80                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-80-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:69:17-77
-80-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:69:25-75
-81            </intent-filter>
-82        </receiver>
+78        <receiver android:name="net.kismetwireless.android.pcapcapture.WiFiScan" >
+78-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:70:9-76:20
+78-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:70:19-43
+79            <intent-filter>
+79-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:71:13-75:29
+80                <action android:name="android.intent.action.MAIN" />
+80-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:45:17-69
+80-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:45:25-66
+81
+82                <category android:name="android.intent.category.LAUNCHER" />
+82-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:46:17-77
+82-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:46:27-74
 83
-84        <service
-84-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:73:9-75:63
-85            android:name="net.kismetwireless.android.pcapcapture.PcapService"
-85-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:74:13-40
-86            android:description="@string/pcap_service_desc" />
-86-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:75:13-60
-87    </application>
-88
-89</manifest>
+84                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+84-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:74:17-77
+84-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:74:25-75
+85            </intent-filter>
+86        </receiver>
+87
+88        <service
+88-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:78:9-80:63
+89            android:name="net.kismetwireless.android.pcapcapture.PcapService"
+89-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:79:13-40
+90            android:description="@string/pcap_service_desc" />
+90-->/root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:80:13-60
+91    </application>
+92
+93</manifest>

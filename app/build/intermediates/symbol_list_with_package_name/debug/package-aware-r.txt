@@ -1880,6 +1880,9 @@ id buttonPanel
 id cache_measures
 id cancel_action
 id cancel_button
+id captive
+id captive_all
+id captive_text
 id center
 id center_horizontal
 id center_vertical
@@ -2206,6 +2209,7 @@ id test_radiobutton_android_button_tint
 id test_radiobutton_app_button_tint
 id text
 id text2
+id textAPDetails
 id textChannelHop
 id textChannelHopSmall
 id textDashCaptureControl
@@ -2340,6 +2344,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_captive_portal
 layout activity_fake_apscanner
 layout activity_filemanager
 layout activity_main
@@ -2364,9 +2369,9 @@ layout dialog_rename
 layout fragment_filelist
 layout fragment_filelist_row
 layout fragment_fileusage
+layout fragment_list_wifi
 layout fragment_pcaplist
 layout fragment_pcaplist_row
-layout list_wifi
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2576,6 +2581,7 @@ string small
 string status_bar_notification_info_overflow
 string title_activity_filemanager
 string title_activity_main
+string triattext
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

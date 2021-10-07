@@ -62,6 +62,11 @@
             android:label="@string/title_activity_filemanager"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name=".CaptivePortal"
+            android:label="CaptivePortal"
+            android:theme="@style/AppTheme" />
+
         <receiver android:name=".WiFiScan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

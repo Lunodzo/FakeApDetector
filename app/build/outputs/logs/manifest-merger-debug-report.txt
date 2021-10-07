@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
+INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
+INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
+INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
 MERGED from [androidx.gridlayout:gridlayout:1.0.0] /root/.gradle/caches/transforms-3/12246154c31eb8a4a81dba34fa061691/transformed/gridlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /root/.gradle/caches/transforms-3/3fe5827d6ee265022c6c7d744237ebf4/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.4.0] /root/.gradle/caches/transforms-3/e44905d88435b8a284dfc0fee1bf9165/transformed/material-1.4.0/AndroidManifest.xml:17:1-24:12
@@ -46,9 +46,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/t
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /root/.gradle/caches/transforms-3/c129541f22e72f5702460e9680d31346/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /root/.gradle/caches/transforms-3/4e5640acfa3303f029a6b28e05225f13/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /root/.gradle/caches/transforms-3/301b99617320b59a57400f8a9ec84a15/transformed/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
-INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-78:12
+INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
+INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
+INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:2:1-83:12
 	package
 		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:3:5-53
 		INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml
@@ -118,7 +118,7 @@ ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:
 	android:anyDensity
 		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:21:9-34
 application
-ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:29:5-76:19
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:29:5-81:19
 MERGED from [com.google.android.material:material:1.4.0] /root/.gradle/caches/transforms-3/e44905d88435b8a284dfc0fee1bf9165/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /root/.gradle/caches/transforms-3/e44905d88435b8a284dfc0fee1bf9165/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /root/.gradle/caches/transforms-3/8d98eeb656d373d523b554e09fbb1eca/transformed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
@@ -197,22 +197,30 @@ ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:
 		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:63:13-44
 	android:name
 		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:61:13-48
+activity#net.kismetwireless.android.pcapcapture.CaptivePortal
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:65:9-68:47
+	android:label
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:67:13-42
+	android:theme
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:68:13-44
+	android:name
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:66:13-42
 receiver#net.kismetwireless.android.pcapcapture.WiFiScan
-ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:65:9-71:20
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:70:9-76:20
 	android:name
-		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:65:19-43
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:70:19-43
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.net.wifi.WIFI_STATE_CHANGED+category:name:android.intent.category.LAUNCHER
-ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:66:13-70:29
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:71:13-75:29
 action#android.net.wifi.WIFI_STATE_CHANGED
-ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:69:17-77
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:74:17-77
 	android:name
-		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:69:25-75
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:74:25-75
 service#net.kismetwireless.android.pcapcapture.PcapService
-ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:73:9-75:63
+ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:78:9-80:63
 	android:description
-		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:75:13-60
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:80:13-60
 	android:name
-		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:74:13-40
+		ADDED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml:79:13-40
 uses-sdk
 INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /root/StudioProjects/FakeApDetector/app/src/main/AndroidManifest.xml

@@ -35,7 +35,7 @@ public class WiFiScan extends AppCompatActivity {
    ListView wifiList;
    List<ScanResult> results;
    Button scanButton, scanEvilButton;
-   ArrayList<String> arrayList = new ArrayList<>();
+   ArrayList<String> arrayList = new ArrayList<String>();
    ArrayAdapter arrayAdapter;
    public int count = 1;
 
@@ -58,10 +58,11 @@ public class WiFiScan extends AppCompatActivity {
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CaptivePortal.class));
                 //arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
                 //arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
                 //wifiList.setAdapter(arrayAdapter);
-                scanWiFi();
+                //scanWiFi();
             }
         });
 
@@ -83,7 +84,8 @@ public class WiFiScan extends AppCompatActivity {
             wifiManager.setWifiEnabled(true);
         }
 
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
+        //arrayAdapter = new ArrayAdapter<String>(this, R.layout.fragment_list_wifi, R.id.textWifiName, R.id.textAPDetails, arrayList);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
         wifiList.setAdapter(arrayAdapter);
         scanWiFi();
     }
@@ -156,6 +158,11 @@ public class WiFiScan extends AppCompatActivity {
             for (ScanResult scanResult: results){
                 arrayList.add(scanResult.SSID +" * "+ scanResult.capabilities + " * "+ scanResult.BSSID+ " * "
                         + scanResult.level);
+//                HashMap<String, String> item = new HashMap<String, String>();
+//                item.put(scanResult.SSID, scanResult.BSSID+" * "+scanResult.capabilities +" * "+scanResult.level);
+//                item.put(scanResult.SSID, scanResult.BSSID+" * "+scanResult.capabilities +" * "+scanResult.level);
+//                arrayList.add(item);
+                //arrayList.add(scanResult.SSID, scanResult.BSSID+" * "+scanResult.capabilities +" * "+scanResult.level);
                 arrayAdapter.notifyDataSetChanged();
             }
         }
