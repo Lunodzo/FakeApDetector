@@ -3,7 +3,6 @@ package net.kismetwireless.android.pcapcapture;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -66,8 +65,6 @@ public class CaptivePortal extends Activity {
 
         //Read HTTP response
         WebResourceResponse errorResponse = null;
-        WebResourceRequest request;
-        //Capture error coded from HTTP response after submitting the credentials
         int statusCode = errorResponse.getStatusCode();
         if(statusCode != 401){
             Toast.makeText(getApplicationContext(), "Fake Captive Portal"+statusCode, Toast.LENGTH_SHORT).show();
