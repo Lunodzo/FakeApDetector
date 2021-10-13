@@ -21,17 +21,37 @@ net/kismetwireless/android/pcapcapture/FilemanagerActivity.java
  net.kismetwireless.android.pcapcapture.FilemanagerActivity$3
 net/kismetwireless/android/pcapcapture/BuildConfig.java
  net.kismetwireless.android.pcapcapture.BuildConfig
+net/kismetwireless/android/pcapcapture/MyObject.java
+ net.kismetwireless.android.pcapcapture.MyObject
 net/kismetwireless/android/pcapcapture/Packet.java
  net.kismetwireless.android.pcapcapture.Packet
-net/kismetwireless/android/pcapcapture/PacketHandler.java
- net.kismetwireless.android.pcapcapture.PacketHandler
+net/kismetwireless/android/pcapcapture/MainActivity.java
+ net.kismetwireless.android.pcapcapture.MainActivity
+ net.kismetwireless.android.pcapcapture.MainActivity$1
+ net.kismetwireless.android.pcapcapture.MainActivity$10
+ net.kismetwireless.android.pcapcapture.MainActivity$11
+ net.kismetwireless.android.pcapcapture.MainActivity$12
+ net.kismetwireless.android.pcapcapture.MainActivity$13
+ net.kismetwireless.android.pcapcapture.MainActivity$2
+ net.kismetwireless.android.pcapcapture.MainActivity$3
+ net.kismetwireless.android.pcapcapture.MainActivity$4
+ net.kismetwireless.android.pcapcapture.MainActivity$5
+ net.kismetwireless.android.pcapcapture.MainActivity$6
+ net.kismetwireless.android.pcapcapture.MainActivity$7
+ net.kismetwireless.android.pcapcapture.MainActivity$8
+ net.kismetwireless.android.pcapcapture.MainActivity$9
+ net.kismetwireless.android.pcapcapture.MainActivity$IncomingServiceHandler
+ net.kismetwireless.android.pcapcapture.MainActivity$deferredUsbIntent
 net/kismetwireless/android/pcapcapture/FileusageFragment.java
  net.kismetwireless.android.pcapcapture.FileusageFragment
  net.kismetwireless.android.pcapcapture.FileusageFragment$1
-net/kismetwireless/android/pcapcapture/NameDialog.java
- net.kismetwireless.android.pcapcapture.NameDialog
- net.kismetwireless.android.pcapcapture.NameDialog$1
- net.kismetwireless.android.pcapcapture.NameDialog$2
+net/kismetwireless/android/pcapcapture/WiFiScan.java
+ net.kismetwireless.android.pcapcapture.WiFiScan
+ net.kismetwireless.android.pcapcapture.WiFiScan$1
+ net.kismetwireless.android.pcapcapture.WiFiScan$2
+ net.kismetwireless.android.pcapcapture.WiFiScan$3
+ net.kismetwireless.android.pcapcapture.WiFiScan$DatabaseHandler
+ net.kismetwireless.android.pcapcapture.WiFiScan$WifiScanAsyncTask
 net/kismetwireless/android/pcapcapture/FakeAPScanner.java
  net.kismetwireless.android.pcapcapture.FakeAPScanner
 net/kismetwireless/android/pcapcapture/PcapLogger.java
@@ -52,23 +72,9 @@ net/kismetwireless/android/pcapcapture/PopupMenuAdapter.java
 net/kismetwireless/android/pcapcapture/PcapFileTyper.java
  net.kismetwireless.android.pcapcapture.PcapFileTyper
  net.kismetwireless.android.pcapcapture.PcapFileTyper$1
-net/kismetwireless/android/pcapcapture/MainActivity.java
- net.kismetwireless.android.pcapcapture.MainActivity
- net.kismetwireless.android.pcapcapture.MainActivity$1
- net.kismetwireless.android.pcapcapture.MainActivity$10
- net.kismetwireless.android.pcapcapture.MainActivity$11
- net.kismetwireless.android.pcapcapture.MainActivity$12
- net.kismetwireless.android.pcapcapture.MainActivity$13
- net.kismetwireless.android.pcapcapture.MainActivity$2
- net.kismetwireless.android.pcapcapture.MainActivity$3
- net.kismetwireless.android.pcapcapture.MainActivity$4
- net.kismetwireless.android.pcapcapture.MainActivity$5
- net.kismetwireless.android.pcapcapture.MainActivity$6
- net.kismetwireless.android.pcapcapture.MainActivity$7
- net.kismetwireless.android.pcapcapture.MainActivity$8
- net.kismetwireless.android.pcapcapture.MainActivity$9
- net.kismetwireless.android.pcapcapture.MainActivity$IncomingServiceHandler
- net.kismetwireless.android.pcapcapture.MainActivity$deferredUsbIntent
+net/kismetwireless/android/pcapcapture/CaptivePortal.java
+ net.kismetwireless.android.pcapcapture.CaptivePortal
+ net.kismetwireless.android.pcapcapture.CaptivePortal$1
 net/kismetwireless/android/pcapcapture/UsbSource.java
  net.kismetwireless.android.pcapcapture.UsbSource
 net/kismetwireless/android/pcapcapture/PcapService.java
@@ -77,15 +83,9 @@ net/kismetwireless/android/pcapcapture/PcapService.java
  net.kismetwireless.android.pcapcapture.PcapService$2
  net.kismetwireless.android.pcapcapture.PcapService$3
  net.kismetwireless.android.pcapcapture.PcapService$IncomingServiceHandler
-net/kismetwireless/android/pcapcapture/MyObject.java
- net.kismetwireless.android.pcapcapture.MyObject
-net/kismetwireless/android/pcapcapture/CaptivePortal.java
- net.kismetwireless.android.pcapcapture.CaptivePortal
- net.kismetwireless.android.pcapcapture.CaptivePortal$1
-net/kismetwireless/android/pcapcapture/WiFiScan.java
- net.kismetwireless.android.pcapcapture.WiFiScan
- net.kismetwireless.android.pcapcapture.WiFiScan$1
- net.kismetwireless.android.pcapcapture.WiFiScan$2
- net.kismetwireless.android.pcapcapture.WiFiScan$3
- net.kismetwireless.android.pcapcapture.WiFiScan$DatabaseHandler
- net.kismetwireless.android.pcapcapture.WiFiScan$WifiScanAsyncTask
+net/kismetwireless/android/pcapcapture/NameDialog.java
+ net.kismetwireless.android.pcapcapture.NameDialog
+ net.kismetwireless.android.pcapcapture.NameDialog$1
+ net.kismetwireless.android.pcapcapture.NameDialog$2
+net/kismetwireless/android/pcapcapture/PacketHandler.java
+ net.kismetwireless.android.pcapcapture.PacketHandler
