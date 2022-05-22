@@ -313,7 +313,13 @@ public class WiFiScan extends AppCompatActivity {
                 String selectFirstSignalOpen = "SELECT level FROM duplicateCapabilities ORDER by time LIMIT 1";
                 Cursor firstSignal = db.rawQuery(selectFirstSignalOpen, null);
                 firstSignal.moveToFirst();
-                int storeFirstSignal = firstSignal.getInt(0);
+                int storeFirstSignal = 0;
+               
+                if (firstSignal.moveToFirst()) {
+                    do {
+                        storeFirstSignal = firstSignal.getInt(0);
+                    } while (firstSignal.moveToNext());
+                }
 
                 String detectDuplicateOpenAP = "SELECT * FROM duplicateCapabilities dp1 WHERE EXISTS " +
                         "(SELECT 1 FROM duplicateCapabilities dp2 WHERE dp1.ssid = dp2.ssid AND " +
